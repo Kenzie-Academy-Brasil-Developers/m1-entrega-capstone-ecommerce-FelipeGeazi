@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.body {
+    display: flex;
+    /*   justify-content: center; */
+    margin-left: 115px;
+    margin-right: 115px;
+}
+
+#header {
+    /*  position: fixed;
+    inset: 0; */
+    background-color: aliceblue;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 7px 7px -3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 7px 7px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 7px 7px -3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 10px;
+    width: 30vw;
+}
+
+.itemMenu {
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#logo {
+    width: /* 212px; */
+    50vw;
+    height: 24px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    color: #292929;
+    font-size: 30px;
+    line-height: 24px;
+    text-shadow: 1px 4px 10px rgba(0, 0, 0, 0.48);
+    margin-left: 115px;
+}
+
+#listaCard {
+    display: flex;
+    width: 60vw;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-around; */
+    margin-left: 5vw;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.cardProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 296px;
+    height: 408px;
+    border: 1px solid #F5F5F5;
+}
+
+.divImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 296px;
+    height: 154px;
+    text-align: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    /* border: 1px solid #F5F5F5; */
+}
+
+
+/*  img {
+                    height: 140px;
+                } */
+
+.cardProductBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 296px;
+    height: 254px;
+    padding: 10px;
+    /*  border: 1px solid #F5F5F5; */
+}
+
+.categorias {
+    background-color: #2E245E;
+    color: #FFFFFF;
+    width: 70px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 5px;
+    text-align: center;
+}
+
+.nomeProduto {
+    color: #292929;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.descricao {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #292929;
+}
+
+.price {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #2E245E;
+}
+
+.add {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #242424;
+}
+
+.mainLateral {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.busca {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    row-gap: 10%;
+    column-gap: 5%;
+}
+
+#barraDePesquisa {
+    width: /* 246px */
+    65%;
+    height: 50px;
+    background: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #242424;
+}
+
+input[placeholder] {
+    text-align: justify;
+    padding-left: 5px;
+}
+
+#buttonPesquisar {
+    width: /* 96px */
+    30%;
+    height: 50px;
+    background: #37268C;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.carrinhoDeCompras {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.divCarrinho {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #37268C;
+}
+
+.tituloCarrinhoH3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+#itensCarrinhoDeCompras {
+    height: 214px;
+    width: 100%;
+    background: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#carrinhoVazioH3 {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    color: #292929;
+}
+
+#carrinhoVazioP {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #242424;
+}
+
+#buttonPesquisar:hover {
+    background-color: #c3bbee;
+    border: #2E245E;
+    cursor: pointer;
+}
+
+.cardProduct:hover {
+    border: 2px solid #2E245E;
+}
+
+.add:hover {
+    color: #2E245E;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.itemMenu:hover {
+    color: #9b91ca;
+    cursor: pointer;
+}
