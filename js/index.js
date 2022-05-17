@@ -156,6 +156,13 @@ function addCarrinho(idProduct) {
     removerProduto.classList.add("add")
     removerProduto.innerText = "Remover Produto"
 
+    // remover item 
+    removerProduto.addEventListener("click", function() {
+        itemNoCarrinho.classList.remove("itemNoCarrinho")
+        itemNoCarrinho.classList.add("removido")
+    })
+
+
 
 
 
@@ -168,6 +175,7 @@ function addCarrinho(idProduct) {
     divInformacoesCarrinho.appendChild(tituloItemCarrinho)
     divInformacoesCarrinho.appendChild(priceCarrinho)
     divInformacoesCarrinho.appendChild(removerProduto)
+
 
 
 
@@ -191,17 +199,8 @@ function addCarrinho(idProduct) {
 
     divTotal.classList.remove("removido")
     divTotal.classList.add("divQuantidade")
-
-
-
-
-
-
-
-
-
-
 }
+
 
 
 
@@ -288,7 +287,7 @@ quantidade.innerText = "Quantidade:"
 
 const quantidadeSoma = document.createElement("p")
 quantidadeSoma.classList.add("somaCarinho")
-quantidadeSoma.innerText = "10"
+quantidadeSoma.innerText = 0
 
 
 
@@ -307,7 +306,8 @@ totalTitulo.innerText = "Total:"
 
 const totalSoma = document.createElement("p")
 totalSoma.classList.add("somaCarinho")
-totalSoma.innerText = "R$ 10"
+totalSoma.innerText = 0
+0
 
 divTotalNoCarrinho.appendChild(divTotal)
 divTotal.appendChild(totalTitulo)
