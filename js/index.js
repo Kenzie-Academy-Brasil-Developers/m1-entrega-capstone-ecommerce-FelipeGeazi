@@ -94,7 +94,7 @@ function montaCard(arrLista) {
         add.classList.add("add")
         add.innerText = `${arrLista[i].addCart}`
         add.id = `${arrLista[i].id}`
-        add.addEventListener("click", addCarinho)
+            /* add.addEventListener("click", addCarinho) */
 
 
 
@@ -110,6 +110,8 @@ function montaCard(arrLista) {
         cardProductBody.appendChild(price)
         cardProductBody.appendChild(add)
 
+        add.setAttribute("onclick", "addCarrinho(" + add.id + ")")
+
     }
 
 
@@ -123,20 +125,62 @@ function montaCard(arrLista) {
 
 montaCard(data)
 
-function addCarinho(event) {
+function addCarrinho(idProduct) {
 
+    const product = data.find(position => position.id == idProduct)
+    carrinhoVazioH3.innerText = ""
 
     // item no carrinho
     itemNoCarrinho = document.createElement("li")
-    carrinhoVazioH3.innerText = ""
-    itemNoCarrinho.innerText = "teste"
     itemNoCarrinho.classList.add("itemNoCarrinho")
+
+    imagemMini = document.createElement("img")
+    imagemMini.src = `${product.img}`
+    imagemMini.classList.add("imagemMini")
+
+
+    divInformacoesCarrinho = document.createElement("div")
+    divInformacoesCarrinho.classList.add("divInformacoesCarrinho")
+
+    tituloItemCarrinho = document.createElement("h3")
+    tituloItemCarrinho.classList.add("nomeProduto")
+    tituloItemCarrinho.innerText = `${product.nameItem}`
+
+    priceCarrinho = document.createElement("p")
+    priceCarrinho.classList.add("price")
+    priceCarrinho.innerText = ` R$ ${product.value},00`
+
+
+
+    removerProduto = document.createElement("p")
+    removerProduto.classList.add("add")
+    removerProduto.innerText = "Remover Produto"
+
+
+
+
+
+
+
     listaCarrinhoDeCompras.appendChild(itemNoCarrinho)
+    itemNoCarrinho.appendChild(imagemMini)
+    itemNoCarrinho.appendChild(divInformacoesCarrinho)
+    divInformacoesCarrinho.appendChild(tituloItemCarrinho)
+    divInformacoesCarrinho.appendChild(priceCarrinho)
+    divInformacoesCarrinho.appendChild(removerProduto)
+
+
+
+
+
+    /*  itemNoCarrinho.innerText = product.nameItem
+     itemNoCarrinho.classList.add("itemNoCarrinho") */
+
 
     // div item no carrinho
-    divItemCarrinho = document.createElement("div")
+    /* divItemCarrinho = document.createElement("div")
     divItemCarrinho.classList.add("divItemCarrinho")
-    itemNoCarrinho.appendChild(divItemCarrinho)
+    itemNoCarrinho.appendChild(divItemCarrinho) */
 
     //colocando class na div total
     divTotalNoCarrinho.classList.add("divTotalNoCarrinho")
@@ -228,11 +272,11 @@ listaCarrinhoDeCompras.appendChild(carrinhoVazioH3)
 divTotalNoCarrinho = document.createElement("div")
 carrinhoDeCompras.appendChild(divTotalNoCarrinho)
 
+
+
+
+
 //
-
-
-
-
 const divQuantidade = document.createElement("div")
 divQuantidade.classList.add("removido")
 

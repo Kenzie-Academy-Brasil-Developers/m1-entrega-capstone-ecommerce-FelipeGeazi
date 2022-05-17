@@ -252,6 +252,7 @@ input[placeholder] {
     font-weight: 700;
     font-size: 22px;
     color: #030303;
+    list-style: none;
 }
 
 .carrinhoVazioP {
@@ -286,8 +287,7 @@ input[placeholder] {
 .itemNoCarrinho {
     width: 80%;
     display: flex;
-    border: 1px solid red;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .divItemCarrinho {
@@ -334,6 +334,17 @@ input[placeholder] {
 
 .removido {
     display: none;
+}
+
+.imagemMini {
+    width: 40%;
+}
+
+.divInformacoesCarrinho {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left: 10px;
 }
 
 @media (max-width: 1035px) {
