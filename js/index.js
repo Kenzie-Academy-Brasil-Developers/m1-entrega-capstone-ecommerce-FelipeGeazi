@@ -123,7 +123,8 @@ function addCarinho(event) {
     console.log(event.currentTarget.id)
         // item no carrinho
     itemNoCarrinho = document.createElement("li")
-    itemNoCarrinho.innerText = "teste"
+    carrinhoVazioH3.innerText = ""
+    itemNoCarrinho.innerText = data.id
     itemNoCarrinho.classList.add("itemNoCarrinho")
     listaCarrinhoDeCompras.appendChild(itemNoCarrinho)
 

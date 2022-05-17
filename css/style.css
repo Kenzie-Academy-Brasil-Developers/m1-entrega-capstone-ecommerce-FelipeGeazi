@@ -286,11 +286,13 @@ input[placeholder] {
 .itemNoCarrinho {
     width: 80%;
     display: flex;
-    background-color: cornflowerblue;
+    border: 1px solid red;
+    margin-bottom: 10px;
 }
 
 .divItemCarrinho {
     display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 1035px) {
