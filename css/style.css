@@ -236,7 +236,7 @@ input[placeholder] {
     align-items: center;
 }
 
-#carrinhoVazioH3 {
+.carrinhoVazioH3 {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -244,7 +244,15 @@ input[placeholder] {
     color: #292929;
 }
 
-#carrinhoVazioP {
+.carrinhoVazioH32 {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    color: #030303;
+}
+
+.carrinhoVazioP {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
