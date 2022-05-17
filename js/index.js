@@ -62,6 +62,7 @@ function montaCard(arrLista) {
 
         itemCardProduct = document.createElement("li")
         itemCardProduct.classList.add("cardProduct")
+        itemCardProduct.id = `${arrLista[i].id}`
 
         divImage = document.createElement("div")
         divImage.classList.add("divImage")
@@ -89,9 +90,14 @@ function montaCard(arrLista) {
         price.classList.add("price")
         price.innerHTML = `<strong>R$ ${arrLista[i].value},00<strong>`
 
-        add = document.createElement("p")
+        var add = document.createElement("p")
         add.classList.add("add")
         add.innerText = `${arrLista[i].addCart}`
+        add.id = `${arrLista[i].id}`
+        add.addEventListener("click", addCarinho)
+
+
+
 
 
         listaCard.appendChild(itemCardProduct)
@@ -105,9 +111,36 @@ function montaCard(arrLista) {
         cardProductBody.appendChild(add)
 
     }
+
+
+
+
 }
 
 montaCard(data)
+
+function addCarinho(event) {
+    console.log(event.currentTarget.id)
+        // item no carrinho
+    itemNoCarrinho = document.createElement("li")
+    itemNoCarrinho.innerText = "teste"
+    itemNoCarrinho.classList.add("itemNoCarrinho")
+    listaCarrinhoDeCompras.appendChild(itemNoCarrinho)
+
+    // div item no carrinho
+    divItemCarrinho = document.createElement("div")
+    divItemCarrinho.classList.add("divItemCarrinho")
+    itemNoCarrinho.appendChild(divItemCarrinho)
+
+}
+
+
+
+
+
+
+
+
 
 // ASIDE
 
@@ -141,7 +174,7 @@ carrinhoDeCompras = document.createElement("section")
 carrinhoDeCompras.classList.add("buttonPesquisar")
 mainLateral.appendChild(carrinhoDeCompras)
 
-// div titulo carrionho
+// div titulo carrinho
 divCarrinho = document.createElement("div")
 divCarrinho.classList.add("divCarrinho")
 carrinhoDeCompras.appendChild(divCarrinho)
@@ -152,9 +185,19 @@ tituloCarrinhoH3.classList.add("tituloCarrinhoH3")
 tituloCarrinhoH3.innerText = "Carrinho de Compras"
 divCarrinho.appendChild(tituloCarrinhoH3)
 
-// div carrinho de compras
-itensCarrinhoDeCompras = document.createElement("div")
-itensCarrinhoDeCompras.id = "itensCarrinhoDeCompras"
-itensCarrinhoDeCompras.innerText = "Carrinho Vazio"
-itensCarrinhoDeCompras.classList.add("carrinhoVazioH32")
-carrinhoDeCompras.appendChild(itensCarrinhoDeCompras)
+// lista carrinho de compras
+listaCarrinhoDeCompras = document.createElement("ul")
+listaCarrinhoDeCompras.id = "itensCarrinhoDeCompras"
+listaCarrinhoDeCompras.classList.add("carrinhoVazioH32")
+carrinhoDeCompras.appendChild(listaCarrinhoDeCompras)
+
+// texto carrinho vazio
+carrinhoVazioH3 = document.createElement("h3")
+carrinhoVazioH3.innerText = "Carrinho Vazio"
+carrinhoVazioH3.classList.add("carrinhoVazioH3")
+    // incluir class de exclusão
+    /* carrinhoVazioH3.classList.add("carrinhoVazioH3") */
+listaCarrinhoDeCompras.appendChild(carrinhoVazioH3)
+
+
+// adicionando no carrinho listaCarrinhoDeCompras

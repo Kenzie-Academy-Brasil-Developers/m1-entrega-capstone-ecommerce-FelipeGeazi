@@ -227,6 +227,7 @@ input[placeholder] {
 }
 
 #itensCarrinhoDeCompras {
+    display: flex;
     height: 214px;
     width: 100%;
     background: #F5F5F5;
@@ -279,6 +280,16 @@ input[placeholder] {
 .itemMenu:hover {
     color: #9b91ca;
     cursor: pointer;
+}
+
+.itemNoCarrinho {
+    width: 80%;
+    display: flex;
+    background-color: cornflowerblue;
+}
+
+.divItemCarrinho {
+    display: flex;
 }
 
 @media (max-width: 1035px) {
@@ -340,5 +351,23 @@ input[placeholder] {
         justify-content: center;
         /*    margin-left: 5vw; */
         /* row-gap: 20px; */
+    }
+}
+
+@media (max-width: 500px) {
+    #header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .menu {
+        width: 100%;
+    }
+    #logo {
+        width: /* 212px; */
+        100%;
+        font-size: 2em;
+        padding: 5px;
     }
 }
