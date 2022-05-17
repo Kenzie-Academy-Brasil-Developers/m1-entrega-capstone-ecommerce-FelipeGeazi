@@ -60,33 +60,33 @@ sectionVitrine.appendChild(listaCard)
 function montaCard(arrLista) {
     for (let i = 0; i < arrLista.length; i++) {
 
-        itemCardProduct = document.createElement("li")
+        var itemCardProduct = document.createElement("li")
         itemCardProduct.classList.add("cardProduct")
         itemCardProduct.id = `${arrLista[i].id}`
 
-        divImage = document.createElement("div")
+        var divImage = document.createElement("div")
         divImage.classList.add("divImage")
 
-        img = document.createElement("img")
+        var img = document.createElement("img")
         img.src = `${arrLista[i].img}`
         divImage.classList.add("divImage")
 
-        cardProductBody = document.createElement("main")
+        var cardProductBody = document.createElement("main")
         cardProductBody.classList.add("cardProductBody")
 
-        categorias = document.createElement("h4")
+        var categorias = document.createElement("h4")
         categorias.classList.add("categorias")
         categorias.innerText = `${arrLista[i].tag}`
 
-        nomeProduto = document.createElement("h3")
+        var nomeProduto = document.createElement("h3")
         nomeProduto.classList.add("nomeProduto")
         nomeProduto.innerText = `${arrLista[i].nameItem}`
 
-        descricao = document.createElement("p")
+        var descricao = document.createElement("p")
         descricao.classList.add("descricao")
         descricao.innerText = `${arrLista[i].description}`
 
-        price = document.createElement("p")
+        var price = document.createElement("p")
         price.classList.add("price")
         price.innerHTML = `<strong>R$ ${arrLista[i].value},00<strong>`
 
@@ -117,14 +117,19 @@ function montaCard(arrLista) {
 
 }
 
+/* itemCardProduct.addEventListener("click", function(event) {
+    console.log(event.target.id)
+}) */
+
 montaCard(data)
 
 function addCarinho(event) {
-    console.log(event.currentTarget.id)
-        // item no carrinho
+
+
+    // item no carrinho
     itemNoCarrinho = document.createElement("li")
     carrinhoVazioH3.innerText = ""
-    itemNoCarrinho.innerText = data.id
+    itemNoCarrinho.innerText = "teste"
     itemNoCarrinho.classList.add("itemNoCarrinho")
     listaCarrinhoDeCompras.appendChild(itemNoCarrinho)
 
@@ -133,9 +138,26 @@ function addCarinho(event) {
     divItemCarrinho.classList.add("divItemCarrinho")
     itemNoCarrinho.appendChild(divItemCarrinho)
 
+    //colocando class na div total
+    divTotalNoCarrinho.classList.add("divTotalNoCarrinho")
+
+    // colocando class no texto da div total
+    divQuantidade.classList.remove("removido")
+    divQuantidade.classList.add("divQuantidade")
+
+    divTotal.classList.remove("removido")
+    divTotal.classList.add("divQuantidade")
+
+
+
+
+
+
+
+
+
+
 }
-
-
 
 
 
@@ -201,4 +223,60 @@ carrinhoVazioH3.classList.add("carrinhoVazioH3")
 listaCarrinhoDeCompras.appendChild(carrinhoVazioH3)
 
 
-// adicionando no carrinho listaCarrinhoDeCompras
+// adicionando no divTotalNoCarrinholistaCarrinhoDeCompras
+
+divTotalNoCarrinho = document.createElement("div")
+carrinhoDeCompras.appendChild(divTotalNoCarrinho)
+
+//
+
+
+
+
+const divQuantidade = document.createElement("div")
+divQuantidade.classList.add("removido")
+
+const quantidade = document.createElement("p")
+quantidade.classList.add("totalTitulo")
+quantidade.innerText = "Quantidade:"
+
+
+
+const quantidadeSoma = document.createElement("p")
+quantidadeSoma.classList.add("somaCarinho")
+quantidadeSoma.innerText = "10"
+
+
+
+divTotalNoCarrinho.appendChild(divQuantidade)
+divQuantidade.appendChild(quantidade)
+divQuantidade.appendChild(quantidadeSoma)
+
+///
+
+const divTotal = document.createElement("div")
+divTotal.classList.add("removido")
+
+const totalTitulo = document.createElement("p")
+totalTitulo.classList.add("totalTitulo")
+totalTitulo.innerText = "Total:"
+
+const totalSoma = document.createElement("p")
+totalSoma.classList.add("somaCarinho")
+totalSoma.innerText = "R$ 10"
+
+divTotalNoCarrinho.appendChild(divTotal)
+divTotal.appendChild(totalTitulo)
+divTotal.appendChild(totalSoma)
+
+
+
+
+
+
+/* const total = document.createElement("p")
+quantidade.classList.add("quantidadeValor")
+quantidade.innerText = "Total:"
+
+total = document.createElement("p")
+totalSoma = document.createElement("p") */

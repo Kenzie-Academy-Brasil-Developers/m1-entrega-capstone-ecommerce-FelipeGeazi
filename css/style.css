@@ -228,14 +228,14 @@ input[placeholder] {
 
 #itensCarrinhoDeCompras {
     display: flex;
-    height: 214px;
+    height: 314px;
     width: 100%;
     background: #F5F5F5;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .carrinhoVazioH3 {
@@ -293,6 +293,47 @@ input[placeholder] {
 .divItemCarrinho {
     display: flex;
     flex-direction: column;
+}
+
+.divTotalNoCarrinho {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+    background: #292929;
+    height: 126px;
+    padding: 10px;
+}
+
+.divQuantidade {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+}
+
+.somaCarinho {
+    width: 50%;
+    text-align: right;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #F5F5F5;
+}
+
+.totalTitulo {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    width: 50%;
+}
+
+.removido {
+    display: none;
 }
 
 @media (max-width: 1035px) {
