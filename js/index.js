@@ -90,7 +90,7 @@ function montaCard(arrLista) {
         price.classList.add("price")
         price.innerHTML = `<strong>R$ ${arrLista[i].value},00<strong>`
 
-        var add = document.createElement("p")
+        var add = document.createElement("button")
         add.classList.add("add")
         add.innerText = `${arrLista[i].addCart}`
         add.id = `${arrLista[i].id}`
@@ -125,13 +125,20 @@ function montaCard(arrLista) {
 
 montaCard(data)
 
+
+
+
+let somatorio = 0
+
 function addCarrinho(idProduct) {
 
     const product = data.find(position => position.id == idProduct)
+
     carrinhoVazioH3.innerText = ""
 
+
     // item no carrinho
-    itemNoCarrinho = document.createElement("li")
+    const itemNoCarrinho = document.createElement("li")
     itemNoCarrinho.classList.add("itemNoCarrinho")
 
     imagemMini = document.createElement("img")
@@ -148,23 +155,30 @@ function addCarrinho(idProduct) {
 
     priceCarrinho = document.createElement("p")
     priceCarrinho.classList.add("price")
-    priceCarrinho.innerText = ` R$ ${product.value},00`
+    priceCarrinho.id = `${product.id}`
+
+    priceCarrinho.innerText = `${product.value}`
+
+    somatorio += parseFloat(priceCarrinho.innerText)
+    totalSoma.innerText = `R$ ${somatorio}`
 
 
 
-    removerProduto = document.createElement("p")
+
+
+
+
+    removerProduto = document.createElement("button")
     removerProduto.classList.add("add")
-    removerProduto.innerText = "Remover Produto"
-
-    // remover item 
-    removerProduto.addEventListener("click", function() {
-        itemNoCarrinho.classList.remove("itemNoCarrinho")
-        itemNoCarrinho.classList.add("removido")
-    })
+    removerProduto.innerText = "⛔"
+    removerProduto.value = `${product.id}`
+    console.log(removerProduto.id)
 
 
 
 
+    /*     quantidadeSoma.innerText = contTotal.length
+     */
 
 
 
@@ -177,19 +191,6 @@ function addCarrinho(idProduct) {
     divInformacoesCarrinho.appendChild(removerProduto)
 
 
-
-
-
-
-    /*  itemNoCarrinho.innerText = product.nameItem
-     itemNoCarrinho.classList.add("itemNoCarrinho") */
-
-
-    // div item no carrinho
-    /* divItemCarrinho = document.createElement("div")
-    divItemCarrinho.classList.add("divItemCarrinho")
-    itemNoCarrinho.appendChild(divItemCarrinho) */
-
     //colocando class na div total
     divTotalNoCarrinho.classList.add("divTotalNoCarrinho")
 
@@ -199,11 +200,60 @@ function addCarrinho(idProduct) {
 
     divTotal.classList.remove("removido")
     divTotal.classList.add("divQuantidade")
+
+
+    /* if (quantidadeSoma < 1) {
+        carrinhoVazioH3.innerText = "Carrinho Vazio"
+    } */
+
+
+    // remover item 
+    let contTotal = document.querySelectorAll("#itensCarrinhoDeCompras li")
+    let valorTotal = document.querySeletor
+
+
+    removerProduto.addEventListener("click", function(e) {
+        /* itemNoCarrinho.classList.remove("itemNoCarrinho")
+        itemNoCarrinho.classList.add("removido") */
+        e.target.parentNode.parentNode.remove()
+        contTotal = document.querySelectorAll("#itensCarrinhoDeCompras li")
+            /* somatorio -= parseFloat(priceCarrinho.innerText) */
+
+
+        quantidadeSoma.innerText = contTotal.length
+
+        retiraItem()
+        retiraValor()
+
+
+
+
+    })
+
+    quantidadeSoma.innerText = contTotal.length
+
+
 }
 
 
+function retiraValor() {
 
 
+    somatorio -= parseFloat(priceCarrinho.innerText)
+        /*  somatorio += parseFloat(priceCarrinho.innerText) */
+    totalSoma.innerText = `R$ ${somatorio}`
+
+}
+
+
+function retiraItem() {
+    if (quantidadeSoma.innerText < 1) {
+        carrinhoVazioH3.innerText = "Carrinho Vazio"
+
+    } else {
+        carrinhoVazioH3.innerText = ""
+    }
+}
 
 
 
@@ -287,7 +337,7 @@ quantidade.innerText = "Quantidade:"
 
 const quantidadeSoma = document.createElement("p")
 quantidadeSoma.classList.add("somaCarinho")
-quantidadeSoma.innerText = 0
+    /* quantidadeSoma.innerText = 0 */
 
 
 
@@ -306,8 +356,8 @@ totalTitulo.innerText = "Total:"
 
 const totalSoma = document.createElement("p")
 totalSoma.classList.add("somaCarinho")
-totalSoma.innerText = 0
-0
+    /* totalSoma.innerText = 0 */
+
 
 divTotalNoCarrinho.appendChild(divTotal)
 divTotal.appendChild(totalTitulo)
